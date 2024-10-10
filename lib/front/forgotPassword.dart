@@ -30,7 +30,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       if (response.statusCode == 200) {
         final responseBody = json.decode(response.body);
         if (responseBody["status"] == "success") {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text("Verification code sent to your email."),
           ));
         } else {
@@ -45,7 +45,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       }
     } catch (e) {
       print("Error: $e");
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("An error occurred. Please try again."),
       ));
     }
